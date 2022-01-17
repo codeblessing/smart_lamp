@@ -10,21 +10,24 @@
 using Display = hd44780_I2Cexp;
 
 void setup_display();
-void display(const char* message);
+void display(const char *message);
 
 #ifdef SMARTLAMP_IMPLEMENT
 
-static Display __display;
+static Display lcd;
 
-void setup_display() {
-  int failed = __display.begin(LCD_COLS, LCD_ROWS);
-  if (failed) {
+void setup_display()
+{
+  int failed = lcd.begin(LCD_COLS, LCD_ROWS);
+  if (failed)
+  {
     exit(failed);
   }
 }
 
-void display(const char* message) {
-  __display.print(message);
+void display(const char *message)
+{
+  lcd.print(message);
 }
 
 #endif // SMARTLAMP_IMPLEMENT
