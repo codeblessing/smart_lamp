@@ -3,7 +3,7 @@
 
 #include "constants.hpp"
 
-char get_current_intensity(char port);
-bool set_intensity(char port, char hour, char minute, char intensity);
+char get_current_intensity(unsigned char port);
+bool set_intensity(unsigned char port, unsigned char hour, unsigned char minute, unsigned char intensity);
 
 #endif // __SMARTLAMP_LIGHT_CONTROL__

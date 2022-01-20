@@ -160,17 +160,23 @@ void loop()
 {
     keyboard.poll();
     level = (int)((sin(lamp_0) + 1.0f) * 255.0f / 2.0f);
+//    level = get_current_intensity(0);
     analogWrite(LIGHT_1, level);
+//    level = get_current_intensity(1);
     level = (int)((sin(lamp_1) + 1.0f) * 255.0f / 2.0f);
     analogWrite(LIGHT_2, level);
+//    level = get_current_intensity(2);
     level = (int)((sin(lamp_2) + 1.0f) * 255.0f / 2.0f);
     analogWrite(LIGHT_3, level);
+//    level = get_current_intensity(3);
     level = (int)((sin(lamp_3) + 1.0f) * 255.0f / 2.0f);
     analogWrite(LIGHT_4, level);
     lamp_0 += step;
     lamp_1 += step;
     lamp_2 += step;
     lamp_3 += step;
+
+    
 
     delay(10);
 }
